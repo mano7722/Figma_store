@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Figma Store</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            font-family:sans-serif;
+        }
+        .onav{
+            width: 100%;
+            height: auto;
+            background-color: white;
+            position: fixed;
+            z-index: 5;
+        }
+        .ob{
+            z-index: 3;
+        }
+        .nav{
+            width: 94%;
+            height: 80px;
+            margin-left: 3%;
+        }
+        .nb{
+            width: 22%;
+            height: 38px;
+            font-size: 16px;
+            padding-left: 5%;
+            padding-right: 5%;
+            text-align: center;
+            border-radius: 40px;
+            font-weight: 600;
+            background-color: white;
+            border: 2px solid black;
+        }
+        .nbl{
+            width: 30%;
+            height: 38px;
+            font-size: 16px;
+            padding-left: 5%;
+            padding-right: 5%;
+            text-align: center;
+            border-radius: 40px;
+            font-weight: 600;
+            background-color: white;
+            border: 2px solid black;
+        }
+        #sel{
+            width: 200px;
+            height: 38px;
+            font-size: 16px;
+            padding-left: 5%;
+            padding-right: 5%;
+            text-align: center;
+            border-radius: 40px;
+            font-weight: 700;
+            background-color: white;
+            border: 2px solid black;
+        }
+        #sel:hover{
+            background-color: black;
+            color: white;
+        }
+        .fm{
+            width: 60%;
+        }
+        .ser{
+            width: 78%;
+        }
+        .b2{
+            width: 20%;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .ibtn{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-top: -10px;
+            margin-left: -13px;
+        }
+        .tit{
+            font-weight: 600;
+            background-color: white;
+        }
+        .un{
+            text-decoration: underline;
+        }
+        .caro{
+            width: 100%;
+            height: 700px;
+            background-color: #ffc700;
+            border-bottom: 4px solid #000000;
+            position: relative;
+        }
+        .icaro{
+            width: 100%;
+            height: 600px;
+            position: absolute;
+            top: 90px;
+        }
+        .carous{
+            width: 100%;
+            height: 550px;
+        }
+        .caroimg{
+            border-radius: 50%;
+            border: 4px solid black;
+        }
+        .caroimg2{
+            border-radius: 50px;
+            border: 4px solid black;
+        }
+        .caroimg3{
+            border-radius: 200px;
+            border: 4px solid black;
+        }
+        .scaro{
+            width: 40%;
+            height: auto;
+            justify-content: space-around;
+        }
+        .txt{
+            width: 90%;
+            height: auto;
+            margin-left: 5%;
+            margin-top: 100px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .spn{
+            width: 50px;
+            height: 50px;
+        }
+        .timg{
+            width: 100%;
+            height: 650px;
+            background-image: url("https://store.figma.com/cdn/shop/files/desktop_2400x.png?v=1702333702");
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .cont{
+            width: 40%;
+            height: auto;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            color: black;
+        }
+        .fnt{
+            font-size: 50px;
+            font-weight: 700;
+        }
+        .fnt2{
+            font-size: 50px;
+            font-weight: 700;
+        }
+        #pa{
+            font-size: 32px;
+            line-height: 35px;
+            margin-top: 20px;
+        }
+        .b1{
+            width: 180px;
+            height: auto;
+            padding: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            background-color: black;
+            color: white;
+            border-radius: 50px;
+            margin-top: 30px;
+        }
+        .b1:hover{
+            background-color: black;
+            color: white;
+        }
+        .card{
+            border: none;
+        }
+        .card1{ 
+            width: 96%;
+            height: auto;
+            margin-left: 2%;
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(4,auto);
+            grid-gap: 25px;
+        }
+        .card2{ 
+            width: 96%;
+            height: auto;
+            margin-left: 2%;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cb1{
+            width: 100%;
+            height: 500px;
+            margin-top: -20px !important;
+        }
+        .cb2{
+            width: 100%;
+            height: 700px;
+        }
+        .cb3{
+            width: 48%;
+            height: 500px;
+        }
+        .c2{
+            width: 45%;
+        }
+        .smallc2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            /* display: grid;
+            grid-template-columns: repeat(2,auto);
+            grid-gap: 30px; */
+        }
+        .mimg{
+            width: 100%;
+            height: 400px;
+        }
+        .mimg2{
+            width: 100%;
+            height: 600px;
+        }
+        .cbg{
+            width: 100%;
+            height: 500px;
+            margin-top: -20px !important;
+        }
+        .img1{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_design-in-bloom-tee_01_600x.jpg?v=1670516592");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img1:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_design-in-bloom-tee_05_1000x.jpg?v=1670516593");
+        }
+        .img2{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_washi-tape-green_01_600x.jpg?v=1670520424");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img2:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_washi-tape-green_02_1000x.jpg?v=1670520425");
+        }
+        .img3{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_version-history-jacket_01_600x.jpg?v=1670519561");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img3:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_version-history-jacket_05_1000x.jpg?v=1670519560");
+        }
+        .img4{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_best-bud-pin_03_1000x.jpg?v=1670520788");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img4:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_best-bud-pin_04_1000x.jpg?v=1670520788");
+        }
+        .hd1{
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 16px;
+        }
+        .hd2{
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 23px;
+        }
+        .hd3{
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .img5{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tool-kit-pin_01_600x.jpg?v=1670520907");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img5:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tool-kit-pin_04_1000x.jpg?v=1670520907");
+        }
+        .img6{
+            background-image: url("https://store.figma.com/cdn/shop/files/Micro-Figma-F-RGB_600x.jpg?v=1702073272");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img6:hover{
+            background-image: url("https://store.figma.com/cdn/shop/files/Micro-Figma-F-RGB_600x.jpg?v=1702073272");
+        }
+        .img7{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_shape-up-tee_013_1200x.png?v=1678114580");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img7:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_shape-up-tee_05_1000x.jpg?v=1678114580");
+        }
+        .img8{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_on-brand-hat_01_1200x.jpg?v=1670519718");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img8:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_on-brand-hat_04_1000x.jpg?v=1670519719");
+        }
+        .img9{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_band-together-socks_01_600x.jpg?v=1670519923");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img9:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_band-together-socks_04_1000x.jpg?v=1670519923");
+        }
+        .img10{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_dress-code-hat_01_600x.png?v=1677707527");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img10:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_dress-code-hat_04_1000x.jpg?v=1677707527");
+        }
+        .img11{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_power-points-pin_01_600x.jpg?v=1670520537");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img11:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_power-points-pin_04_1000x.jpg?v=1670520537");
+        }
+        .img12{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_framework-tee_01_600x.jpg?v=1670515454");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img12:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_framework-tee_05_1000x.jpg?v=1670597451");
+        }
+        .img13{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_meet-n-greet-pin_01_600x.jpg?v=1670520677");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img13:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_meet-n-greet-pin_04_1000x.jpg?v=1670597419");
+        }
+        .img14{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tool-kit-mug_01_600x.jpg?v=1670520016");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img14:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tool-kit-mug_04_1000x.jpg?v=1670520015");
+        }
+        .img15{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_washi-tape-tan_01_600x.jpg?v=1670520306");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img15:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_washi-tape-tan_02_1000x.jpg?v=1670520307");
+        }
+        .img16{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tidy-up-tee_01_600x.jpg?v=1670516715");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img16:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/figma-store_tidy-up-tee_04_1000x.jpg?v=1670516716");
+        }
+        .img17{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3403_1200x.jpg?v=1636598385");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img17:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-091_1000x.png?v=1636325077");
+        }
+        .img18{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1096_1200x.jpg?v=1636599836");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img18:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4381_1000x.jpg?v=1636323317");
+        }
+        .img19{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-414-Edit_600x.jpg?v=1636599254");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img19:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-131_1000x.png?v=1636315201");
+        }
+        .img20{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1616_600x.jpg?v=1636599719");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img20:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-111_1000x.png?v=1636324528");
+        }
+        .gd{
+            width: 94%;
+            margin-left: 3%;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4,auto);
+            grid-gap: 25px;
+        }
+        .img21{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2327_600x.jpg?v=1636599425");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img21:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4371_1000x.jpg?v=1636323368");
+        }
+        .img22{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-630_600x.jpg?v=1636598228");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img22:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-157_1000x.png?v=1636323552");
+        }
+        .img23{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1224_600x.jpg?v=1636599461");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img23:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4359_1000x.jpg?v=1636323438");
+        }
+        .img24{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2091_600x.jpg?v=1636598619");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img24:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-116_1000x.png?v=1636324556");
+        }
+        .img25{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-366_600x.jpg?v=1636598498");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img25:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4367_1000x.jpg?v=1636314791");
+        }
+        .img26{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2379_600x.jpg?v=1636598272");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img26:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-085_1000x.png?v=1636325126");
+        }
+        .img27{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3116_efa5ec4c-b900-401d-a7fc-d184d47ec4b9_600x.jpg?v=1636599330");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img27:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-189_1000x.png?v=1636323488");
+        }
+        .img28{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1600_600x.jpg?v=1636599757");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img28:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-143_1000x.png?v=1636324490");
+        }
+        .img29{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1242_600x.jpg?v=1636600007");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img29:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-083_1000x.png?v=1636325154");
+        }
+        .img30{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1469_600x.jpg?v=1636598538");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img30:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4386_1000x.jpg?v=1636323304");
+        }
+        .img31{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2008_600x.jpg?v=1636598330");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img31:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-134_1000x.png?v=1636324500");
+        }
+        .img32{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2662_600x.jpg?v=1636599962");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img32:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-038_1000x.png?v=1636325182");
+        }
+        .img33{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2894_600x.jpg?v=1636598662");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img33:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4370_1000x.jpg?v=1636323405");
+        }
+        .img34{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3504_600x.jpg?v=1636599916");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img34:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-103_1000x.png?v=1636325051");
+        }
+        .img35{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3215_600x.jpg?v=1636598458");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img35:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4372_1000x.jpg?v=1636323336");
+        }
+        .img36{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-4050-Edit_600x.jpg?v=1636598157");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img36:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4369_1000x.jpg?v=1636323268");
+        }
+        .img37{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3423_600x.jpg?v=1636599871");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img37:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-109_1000x.png?v=1636324515");
+        }
+        .img38{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-4136_600x.jpg?v=1636599515");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img38:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-087_1000x.png?v=1636325096");
+        }
+        .img39{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-2953_600x.jpg?v=1636598421");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img39:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-107_1000x.png?v=1636324543");
+        }
+        .img40{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3600-Edit_600x.jpg?v=1636599551");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img40:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4353_1000x.jpg?v=1636641445");
+        }
+        .img41{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3814_600x.jpg?v=1636599369");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img41:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store---Product-4366_1000x.jpg?v=1636323424");
+        }
+        .img42{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-3751-Edit_600x.jpg?v=1636599807");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img42:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-175_1000x.png?v=1636323515");
+        }
+        .img43{
+            background-image: url("https://store.figma.com/cdn/shop/products/GiftCard-PLP_600x.png?v=1641323873");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img43:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/25_1000x.png?v=1641323873");
+        }
+        .img44{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-1375_600x.jpg?v=1643228355");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img44:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/Figma-Store-123_1000x.jpg?v=1643228355");
+        }
+        .img45{
+            background-image: url("https://store.figma.com/cdn/shop/products/IMG_9207_600x.png?v=1651177999");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img45:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/IMG_0036_1000x.jpg?v=1652132420");
+        }
+        .img46{
+            background-image: url("https://store.figma.com/cdn/shop/products/FigmaStore_Tote-25_600x.jpg?v=1657055226");
+            background-size: 100% 100%;
+            border-radius: 10%;
+        }
+        .img46:hover{
+            background-image: url("https://store.figma.com/cdn/shop/products/FigmaStore_Tote-00000_1000x.jpg?v=1657055261");
+        }
+        .botm{
+            width: 100%;
+            height: 420px;
+            margin-top: 50px;
+            padding-top: 50px;
+            background-color: #ffc700;
+            position: relative;
+        }
+        .ibotm{
+            width: 100%;
+            height: auto;
+            color: #000000;
+            background-color: #ffc700;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .marq{
+            width: 100%;
+            height: auto;
+            color: #000000;
+            font-size: 25px;
+            font-weight: 700;
+            position: absolute;
+            bottom: 2%;
+        }
+        .box{
+            width: 20%;
+            height: 270px;
+            background-color: rgb(199, 185, 255);
+            display: flex;
+        }
+        .tfes{
+            width: 50%;
+            height: 100%;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .tfes2{
+            width: 50%;
+            height: 100%;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        #t{
+            width: 100%;
+            height: 30%;
+            padding: 12%;
+            text-align: center;
+            font-weight: 600;
+        }
+        #f{
+            width: 100%;    
+            height: 70%;
+        }
+        #empty{ 
+            width: 100%;
+            height: 30%;
+            background-color: #ffc700;
+        }
+        #s{ 
+            width: 100%;
+            height: 70%;
+            padding-top: 70%;
+            font-weight: 600;
+        }
+        #fcont{
+            margin-top: 60%;
+            margin-left: 10%;
+            font-weight: 600;
+            transform: rotate(-90deg);
+        }
+        .las{
+            width: 50%;
+            height: auto;
+        }
+        .obat{
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,auto);
+        }
+        #obj{
+            width: 100%;
+            height: auto;
+            font-size: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+        }
+        #at{
+            width: 100%;
+            height: auto;
+            font-weight: 600;
+        }
+        .col{
+            font-size: 18px;
+            color:#000000;
+            font-weight: 600;
+        }
+        .social{
+            width: 100%;
+            height: auto;
+            margin-top: 10%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 25px;
+            color:#000000;
+            font-weight: 600;
+        }
+        
+        @media screen and (max-width:1200px) {
+            .nb{
+                font-size: 15px;
+            }
+            #sel{
+                width: 180px;
+                font-size: 15px;
+            }
+            .caro{
+                width: 100%;
+                height: 130vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 105vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 90vh;
+            }
+            .fnt{
+                font-size: 50px;
+            }
+            .timg{
+                height: 120vh;
+            }
+            .cb1,.cb3{
+                height: 90vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                width: 100%;
+                height: 140vh;
+                margin-top: 20px !important;
+            }
+            .cbg{
+                height: 90vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 70vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 120vh;
+            }
+            .hd1{
+                font-size: 18px;
+                line-height: 16px;
+            }
+            .hd2{
+                font-size: 20px;
+                line-height: 20px;
+            }
+            .hd3{
+                font-size: 20px;
+            }
+            .botm{
+                height: 80vh;
+            }
+            .ibotm{
+                height: 70vh;
+            }
+            .box{
+                width: 24%;
+                height: 50vh;
+            }
+            .tfes{
+                font-size: 27px;
+            }
+            .tfes2{
+                font-size: 27px;
+            }
+            #obj{
+                font-size: 30px;
+                line-height: 25px;
+            }
+            .col{
+                font-size: 16px;
+            }
+            .social{
+                font-size: 25px;
+            }
+            .marq{
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (max-width:1050px) {
+            .caro{
+                width: 100%;
+                height: 130vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 105vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 90vh;
+            }
+            .fnt{
+                font-size: 50px;
+            }
+            .timg{
+                height: 110vh;
+            }
+            .cb1,.cb3{
+                height: 80vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                width: 100%;
+                height: 130vh;
+                margin-top: 20px !important;
+            }
+            .cbg{
+                height: 80vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 60vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 110vh;
+            }
+            .hd1{
+                font-size: 16px;
+                line-height: 16px;
+            }
+            .hd2{
+                font-size: 18px;
+                line-height: 20px;
+            }
+            .hd3{
+                font-size: 18px;
+            }
+            .botm{
+                height: 80vh;
+            }
+            .ibotm{
+                height: 70vh;
+            }
+            .box{
+                width: 24%;
+                height: 50vh;
+            }
+            #obj{
+                font-size: 29px;
+                line-height: 25px;
+            }
+            .col{
+                font-size: 16px;
+            }
+            .social{
+                font-size: 23px;
+                display: grid;
+                grid-template-columns: repeat(3,auto);
+            }
+            .marq{
+                font-size: 23px;
+            }
+        }
+
+
+        @media screen and (max-width:990px) {
+            .tit{
+                width: 70%;
+                font-size: 18px;
+            }
+            .nb{
+                width: 40%;
+                font-size: 14px;
+            }
+            .nbl{
+                width: 40%;
+                font-size: 14px;
+            }
+            #sel{
+                width: 40%;
+                font-size: 14px;
+            }
+        }
+
+
+        @media screen and (max-width:900px) {
+            .tit{
+                width: 70%;
+                font-size: 18px;
+            }
+            .nb{
+                font-size: 13px;
+            }
+            .caro{
+                width: 100%;
+                height: 110vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 90vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 80vh;
+            }
+            .timg{
+                height: 110vh;
+            }
+            .cont{
+                width: 45%;
+                top: 17%;
+                left: 5%;
+            }
+            .fnt2{
+                font-size: 42px;
+            }
+            #pa{
+                font-size: 26px;
+                line-height: 30px;
+            }
+            .b1{
+                font-size: 16px;
+            }
+            .cb1,.cb3{
+                height: 75vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                width: 100%;
+                height: 110vh;
+                margin-top: 20px !important;
+            }
+            .cbg{
+                height: 75vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 50vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 90vh;
+            }
+            .hd1{
+                font-size: 15px;
+                line-height: 16px;
+            }
+            .hd2{
+                font-size: 18px;
+                line-height: 20px;
+            }
+            .hd3{
+                font-size: 18px;
+            }
+            .botm{
+                height: 80vh;
+            }
+            .ibotm{
+                height: 70vh;
+            }
+            .box{
+                width: 24%;
+                height: 50vh;
+            }
+            .tfes{
+                font-size: 25px;
+            }
+            .tfes2{
+                font-size: 25px;
+            }
+            .social{
+                font-size: 23px;
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 5%;
+            }
+            .marq{
+                height: 40px;
+                font-size: 23px;
+            } 
+        }
+
+
+        @media screen and (max-width:750px) {
+            .tit{
+                width: 70%;
+                font-size: 16px;
+            }
+            .caro{
+                width: 100%;
+                height: 100vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 80vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 70vh;
+            }
+            .timg{
+                height: 150vh;
+            }
+            .fnt{
+                font-size: 27px;
+            }
+            .cont{
+                width: 90%;
+                top: 60%;
+                left: 5%;
+                text-align: center;
+            }
+            .fnt2{
+                font-size: 38px;
+                font-weight: 700;
+            }
+            #pa{
+                font-size: 25px;
+                line-height: 25px;
+                margin-top: 20px;
+            }
+            .txt{
+                line-height: 30px;
+            }
+            .spn{
+                width: 20px;
+                height: 20px;
+            }
+            .card1{
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 20px;
+            }
+            .card2{ 
+                width: 100%;
+                margin-left: 0%;
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .c2{
+                width: 100%;
+            }
+            .smallc2{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }            
+            .cb1{
+                width: 100%;
+                height: 90vh;
+                margin-top: 20px !important;
+            }
+            .cb3{
+                width: 48%;
+                height: 90vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                height: 130vh;
+                margin-top: 20px !important;
+            }
+            .gd{
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 20px;
+            }
+            .cbg{
+                width: 100%;
+                height: 90vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 70vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 110vh;
+            }
+            .hd1{
+                font-size: 14px;
+                line-height: 14px;
+            }
+            .hd2{
+                font-size: 16px;
+                line-height: 15px;
+            }
+            .hd3{
+                font-size: 16px;
+            }
+            .botm{
+                height: 125vh;
+            }
+            .ibotm{
+                height: 70vh;
+                display: grid;
+                grid-template-columns: repeat(auto);
+            }
+            .box{
+                width: 70%;
+                height: 50vh;
+                margin-left: 15%;
+            }
+            .tfes{
+                font-size: 35px;
+            }
+            .tfes2{
+                font-size: 35px;
+            }   
+            #fcont{
+                margin-top: 30%;
+                margin-left: 10%;
+            }
+            #s{
+                padding-top: 50%;
+            }
+            .las{
+                width: 100%;
+                height: 40vh;
+                display: grid;
+                grid-template-columns: repeat(auto);
+                grid-gap: 30px;
+                margin-top: 10vh;
+            }
+            .obat{
+                width: 100%;
+                height: auto;
+            }
+            #obj{
+                width: 100%;
+                height: auto;
+                font-size: 25px;
+                line-height: 25px;
+            }
+            #at{
+                width: 100%;
+                height: auto;
+                font-weight: 600;
+            }
+            .social{
+                width: 100%;
+                height: auto;
+                font-size: 18px;
+                display: grid;
+                grid-template-columns: repeat(4,auto);
+                grid-gap: 20px;
+                margin-top: 0px !important;
+            }
+            .col{
+                font-size: 16px;
+                font-weight: 500;
+            }
+            .marq{
+                height: 40px;
+                font-size: 23px;
+                bottom: 1%;
+            }
+        }
+
+
+        @media screen and (max-width:550px) {
+            .tit{
+                width: 100%;
+                font-size: 14px;
+            }
+            .caro{
+                width: 100%;
+                height: 90vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 70vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 60vh;
+            }
+            .scaro{
+                width: 44%;
+            }
+            .timg{
+                height: 150vh;
+            }
+            .fnt{
+                font-size: 27px;
+            }
+            .cont{
+                width: 90%;
+                top: 50%;
+                left: 5%;
+                text-align: center;
+            }
+            .fnt2{
+                font-size: 38px;
+                font-weight: 700;
+            }
+            #pa{
+                font-size: 25px;
+                line-height: 25px;
+                margin-top: 20px;
+            }
+            .txt{
+                line-height: 30px;
+            }
+            .spn{
+                width: 20px;
+                height: 20px;
+            }            
+            .cb1{
+                width: 100%;
+                height: 70vh;
+                margin-top: 20px !important;
+            }
+            .cb3{
+                width: 48%;
+                height: 70vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                height: 110vh;
+                margin-top: 20px !important;
+            }
+            .cbg{
+                width: 100%;
+                height: 70vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 55vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 90vh;
+            }
+            .hd1{
+                font-size: 13px;
+                line-height: 10px;
+            }
+            .hd2{
+                font-size: 15px;
+                line-height: 15px;
+            }
+            .hd3{
+                font-size: 15px;
+            }
+            .botm{
+                height: 125vh;
+            }
+            .ibotm{
+                height: 70vh;
+                display: grid;
+                grid-template-columns: repeat(auto);
+            }
+            .box{
+                width: 90%;
+                height: 50vh;
+                margin-left: 5%;
+            }
+            .tfes{
+                font-size: 26px;
+            }
+            .tfes2{
+                font-size: 26px;
+            }
+            #fcont{
+                margin-top: 60%;
+                margin-left: 10%;
+            }
+            #s{
+                padding-top: 70%;
+                font-weight: 600;
+            }
+            #obj{
+                width: 100%;
+                height: auto;
+                font-size: 20px;
+                line-height: 20px;
+            }
+            .col{
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .social{
+                font-size: 16px;
+                line-height: 10px;
+                font-weight: 500;
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 10px;
+                margin-top: 0px !important;
+            }
+        }
+
+
+        @media screen and (max-width:350px) {
+            .tit{
+                width: 100%;
+                font-size: 14px;
+            }
+            .caro{
+                width: 100%;
+                height: 80vh;
+            }
+            .icaro{
+                width: 100%;
+                height: 60vh;
+                top: 110px;
+            }
+            .carous{
+                width: 100%;
+                height: 50vh;
+            }
+            .scaro{
+                width: 44%;
+            }
+            .timg{
+                height: 130vh;
+            }
+            .fnt{
+                font-size: 27px;
+                line-height: 35px;
+            }
+            .cont{
+                width: 90%;
+                top: 40%;
+                left: 5%;
+                text-align: center;
+            }
+            .fnt2{
+                font-size: 30px;
+                font-weight: 700;
+            }
+            #pa{
+                font-size: 22px;
+                line-height: 28px;
+                margin-top: 20px;
+            }
+            .txt{
+                line-height: 30px;
+            }
+            .cb1{
+                width: 100%;
+                height: 50vh;
+                margin-top: 20px !important;
+            }
+            .cb3{
+                width: 48%;
+                height: 50vh;
+                margin-top: 20px !important;
+            }
+            .cb2{
+                height: 70vh;
+                margin-top: 20px !important;
+            }
+            .gd{
+                grid-gap: 10px;
+            }
+            .cbg{
+                width: 100%;
+                height: 50vh;
+                margin-top: 20px !important;
+            }
+            .mimg{
+                width: 100%;
+                height: 35vh;
+            }
+            .mimg2{
+                width: 100%;
+                height: 60vh;
+            }
+            .hd1{
+                font-size: 11px;
+                line-height: 10px;
+            }
+            .hd2{
+                font-size: 12px;
+                line-height: 13px;
+            }
+            .hd3{
+                font-size: 12px;
+            }
+            .botm{
+                height: 115vh;
+            }
+            .ibotm{
+                height: 70vh;
+                display: grid;
+                grid-template-columns: repeat(auto);
+            }
+            .box{
+                width: 90%;
+                height: 40vh;
+                margin-left: 5%;
+            }
+            .tfes{
+                font-size: 22px;
+            }
+            .tfes2{
+                font-size: 22px;
+            }
+            #fcont{
+                margin-top: 50%;
+                margin-left: 10%;
+            }
+            #s{
+                padding-top: 70%;
+                font-weight: 600;
+            }
+            .las{
+                width: 100%;
+                grid-gap: 10px;
+            }
+            .obat{
+                width: 100%;
+                height: auto;
+                grid-gap: 2%;
+            }
+            #obj{
+                width: 100%;
+                height: auto;
+                font-size: 20px;
+                line-height: 25px;
+            }
+            .col{
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .social{
+                font-size: 14px;
+                line-height: 10px;
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 10px;
+                margin-top: 0px !important;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+  
+    <div class="container-fluid">
+
+    <div class="onav">
+        <nav class="navbar nav navbar-expand-lg navbar-light bg-light ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a class="navbar-brand nb me-3 mb-2" href="#">SHOP</a>
+                    <a class="navbar-brand nb me-3 mb-2" href="#">ABOUT</a>
+                    <form class="navbar-brand fm me-3 mb-2 d-flex">
+                        <input class="form-control ser me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="b2 mt-1 btn" type="submit"><img class="ibtn" src="https://icon-library.com/images/search-icon-jpg/search-icon-jpg-5.jpg" alt="" width="100%" height="100%"></button>
+                    </form>
+                </div>
+                
+                <span class="navbar-brand w-25 text-center tit me-3 mb-0 h1">THE FIGMA STORE</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <select name="" id="sel" class="navbar-nav nav-link me-3 mb-2 mb-lg-0">
+                        <option value="">UNITED STATES</option>
+                        <option value="">CANADA</option>
+                        <option value="">JAPAN</option>
+                        <option value="">UNITED KINDOM</option>
+                        <option value="">EUROPIAN UNION</option>
+                        <option value="">I'M JUST BROWSING</option>
+                    </select>
+                    <a class="navbar-brand nbl" href="#">CART</a>
+                </div>
+
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="ob">
+        <div class="caro">
+            <div id="carouselExampleIndicators" class="icaro carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-around">
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_09_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg2" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_10_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_03_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg3" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_04_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg2" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_05_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg3" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_06_1000x.png?v=1678222396" alt="" width="100%" height="100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg2" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_07_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="scaro">
+                                <img class="d-block w-100 carous caroimg" src="https://store.figma.com/cdn/shop/files/figma-store_homepage-hero_08_1000x.jpg?v=1678222214" alt="" width="100%" height="100%">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="txt text-center">
+            <p class="fnt">FIGMA'S <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-burst.static.svg?v=34745811441670751621678219731" alt=""></span> COLLECTION <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-hourglass.static.svg?v=133626873782927219541678219731" alt=""></span> OF <span class="un"> LAYERS </span> <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-zag.static.svg?v=102718930007740203771678219731" alt=""></span> AND <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-dots.static.svg?v=39142388321885661271678219731" alt=""></span> <span  class="un">COMPONENTS</span> <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-sun.static.svg?v=163357932534391307201678219731" alt=""></span> FOR  YOU <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-comet.static.svg?v=16892712658856357451678219731" alt=""></span> AND <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-snake.static.svg?v=34100567131936571961678219731" alt=""></span> YOUR <span class="spn"><img class="spn" src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-tri.static.svg?v=32742515804419710851678219731" alt=""></span> FRIENDS </p>
+        </div>
+
+        <div class="timg mt-5">
+            <div class="cont">
+                <h1 class="fnt2">FIGMA X WORK LOUDER</h1>
+                <p id="pa">Meet the limited edition Figma Creator Micro Keyboard</p>
+                <a class="b1 btn" href="#">PREORDER</a>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="card cb1">
+                <div class="mimg img1"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Design in bloom tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+            
+            <div class="card cb1">
+                <div class="mimg img2"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Gridlock washi tape</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$1</a>
+                </div>
+            </div>
+
+            <div class="card cb1 spcb1">
+                <div class="mimg img3"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Version history coach jacket</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$45</a>
+                </div>
+            </div>
+
+            <div class="card cb1 spcb2">
+                <div class="mimg img4"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Best bud pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card2">
+            <div class="c2">
+                <div class="smallc2">
+                    <div class="card cb3">
+                        <div class="mimg img5"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Toolkit pin</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$2</a>
+                        </div>
+                    </div>
+
+                    <div class="card cb3">
+                        <div class="mimg img6"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Figma Creator Micro Keyboard</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$139</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cb2">
+                    <div class="mimg2 img7"></div>
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <a href="#" class="card-title nav-link hd1">New!</a>
+                            <a href="#" class="card-text nav-link hd2">Shape up tee</a>
+                        </div>
+                        <a href="#" class="nav-link hd3">$20</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="c2">
+
+                <div class="card cb2">
+                    <div class="mimg2 img8"></div>
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <a href="#" class="card-title nav-link hd1">New!</a>
+                            <a href="#" class="card-text nav-link hd2">On brand hat</a>
+                        </div>
+                        <a href="#" class="nav-link hd3">$25</a>
+                    </div>
+                </div>
+
+                <div class="smallc2">
+                    <div class="card cb3">
+                        <div class="mimg img9"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Band together socks</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$10</a>
+                        </div>
+                    </div>
+
+                    <div class="card cb3">
+                        <div class="mimg img10"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Dress code hat</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$20</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="card cb1">
+                <div class="mimg img11"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Power points pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+            
+            <div class="card cb1">
+                <div class="mimg img12"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Framework tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card cb1">
+                <div class="mimg img13"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Meet n' greet pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+
+            <div class="card cb1">
+                <div class="mimg img14"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-title nav-link hd1">New!</a>
+                        <a href="#" class="card-text nav-link hd2">Toolkit mug</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$35</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card2">
+            <div class="c2">
+                <div class="smallc2">
+                    <div class="card cb3">
+                        <div class="mimg img15"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Pick of the bunch washi tape</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$1</a>
+                        </div>
+                    </div>
+
+                    <div class="card cb3">
+                        <div class="mimg img16"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-title nav-link hd1">New!</a>
+                                <a href="#" class="card-text nav-link hd2">Tidy up tee</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$25</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card cb2">
+                    <div class="mimg2 img17"></div>
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <a href="#" class="card-text nav-link hd2">Comments notebook</a>
+                        </div>
+                        <a href="#" class="nav-link hd3">$10</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="c2">
+
+                <div class="card cb2">
+                    <div class="mimg2 img18"></div>
+                    <div class="card-body d-flex justify-content-between">
+                        <div>
+                            <a href="#" class="card-text nav-link hd2">Rainbow logo tee</a>
+                        </div>
+                        <a href="#" class="nav-link hd3">$20</a>
+                    </div>
+                </div>
+
+                <div class="smallc2">
+                    <div class="card cb3">
+                        <div class="mimg img19"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-text nav-link hd2">Figma logo hat</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$20</a>
+                        </div>
+                    </div>
+
+                    <div class="card cb3">
+                        <div class="mimg img20"></div>
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="card-text nav-link hd2">Multicursor pin</a>
+                            </div>
+                            <a href="#" class="nav-link hd3">$2</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="gd">
+            <div class="card cbg">
+                <div class="mimg img21"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Logo dimension tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+            
+            <div class="card cbg">
+                <div class="mimg img22"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Bezier water bottle</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card cbg">
+                <div class="mimg img23"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Hug contents tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card cbg">
+                <div class="mimg img24"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma logo pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img25"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Elavated workflows tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+            
+            <div class="card mt-5 cbg">
+                <div class="mimg img26"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Black arrow socks</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$10</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img27"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma travel tumbler</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$35</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img28"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">code/cap</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img29"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">White pen tool socks</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$10</a>
+                </div>
+            </div>
+            
+            <div class="card mt-5 cbg">
+                <div class="mimg img30"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma hoodie</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$45</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img31"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Blue figma hat</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img32"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Throw blanket</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$80</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img33"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma logo tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$18</a>
+                </div>
+            </div>
+            
+            <div class="card mt-5 cbg">
+                <div class="mimg img34"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Smiley pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img35"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Detach instance tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img36"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Bazier logo tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img37"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Vector network pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+            
+            <div class="card mt-5 cbg">
+                <div class="mimg img38"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Light grey comment socks</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$10</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img39"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Detach instance pin</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$2</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img40"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Meet me in the browser tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img41"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma wordmark tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$18</a>
+                </div>
+            </div>
+            
+            <div class="card mt-5 cbg">
+                <div class="mimg img42"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Pluging mug</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$32</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img43"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">The Figma Store gift card</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$35</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img44"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Figma stick pack</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$1</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img45"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Pixel perfect dark mode tee</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$25</a>
+                </div>
+            </div>
+
+            <div class="card mt-5 cbg">
+                <div class="mimg img46"></div>
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <a href="#" class="card-text nav-link hd2">Cursor tote bag</a>
+                    </div>
+                    <a href="#" class="nav-link hd3">$20</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="botm">
+            <div class="ibotm">
+                <div class="box">
+                    <div class="tfes">
+                        <div id="t">
+                            <p>THE</p>
+                        </div>
+                        <div id="f">
+                            <p id="fcont">FIGMA</p>
+                        </div>
+                    </div>
+
+                    <div class="tfes2">
+                        <div id="empty">
+                        </div>
+                        <div id="s">
+                            <p>STORE</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="las">
+                    <div class="obat">
+                        <div id="obj">
+                            <p>OBJECTS</p>
+                            <p>THAT INSPIRE.</p>
+                        </div>
+
+                        <div id="at">
+                            <p><a class="col nav-link" href="#">Privacy Policy</a></p>
+                            <p><a class="col nav-link" href="#">Terms of Sale</a></p>
+                            <p><a class="col nav-link" href="#">Contact Us</a></p>
+                        </div>
+                    </div>
+
+                    <div class="social">
+                        <a class="scol nav-link" href="#">FIGMA↗</a>
+                        <a class="scol nav-link" href="#">TWITTER</a>
+                        <a class="scol nav-link" href="#">INSTAGRAM</a>
+                        <a class="scol nav-link" href="#">YOUTUBE</a>
+                    </div>
+                </div>
+            </div>
+
+            <marquee class="marq" width="100%" direction="left" height="60px">FIGMA'S <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-burst.static.svg?v=34745811441670751621678219731" alt="" width="25px" height="25px"></span> MARVELOUSLY  <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-hourglass.static.svg?v=133626873782927219541678219731" alt="" width="25px" height="25px"></span> CONSIDERED <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-zag.static.svg?v=102718930007740203771678219731" alt="" width="25px" height="25px"></span> COLLECTION <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-dots.static.svg?v=39142388321885661271678219731" alt="" width="25px" height="25px"></span> OF <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-burst.static.svg?v=34745811441670751621678219731" alt="" width="25px" height="25px"></span> OBJECTS <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-comet.static.svg?v=16892712658856357451678219731" alt="" width="25px" height="25px"></span> FOR <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-hourglass.static.svg?v=133626873782927219541678219731" alt="" width="25px" height="25px"></span> OUR <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-tri.static.svg?v=32742515804419710851678219731" alt="" width="25px" height="25px"></span> TIME <span><img src="https://store.figma.com/cdn/shop/t/9/assets/word-symbol-zag.static.svg?v=102718930007740203771678219731" alt="" width="25px" height="25px"></span> ON</marquee>
+
+        </div>
+   
+    </div>
+    
+    </div>
+</body>
+</html>
